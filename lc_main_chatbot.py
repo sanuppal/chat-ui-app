@@ -13,7 +13,7 @@ from lc_utils import *
 from lc_vector_search import *
 import os
 
-st.subheader("Conversational ChatGPT Chatbot..............")
+st.subheader("Conversational ChatGPT Chatbott..............")
 
 if 'responses' not in st.session_state:
     st.session_state['responses'] = ["How can I assist you?"]
