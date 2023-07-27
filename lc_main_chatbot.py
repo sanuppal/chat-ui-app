@@ -11,6 +11,7 @@ import streamlit as st
 from streamlit_chat import message
 from lc_utils import *
 from lc_vector_search import *
+import os
 
 st.subheader("Conversational ChatGPT Chatbot..............")
 
@@ -19,8 +20,8 @@ if 'responses' not in st.session_state:
 
 if 'requests' not in st.session_state:
     st.session_state['requests'] = []
-
-llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key="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")
+openai.api_key = os.getenv('OPENAI_API_KEY')
+llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key=openai.api_key)
 
 if 'buffer_memory' not in st.session_state:
             st.session_state.buffer_memory=ConversationBufferWindowMemory(k=3,return_messages=True)
