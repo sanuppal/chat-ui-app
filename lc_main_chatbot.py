@@ -13,7 +13,7 @@ from lc_utils import *
 from lc_vector_search import *
 import os
 
-st.subheader("Conversational ChatGPT Chatbott..............")
+st.subheader("KDP GenAI Bot")
 
 if 'responses' not in st.session_state:
     st.session_state['responses'] = ["How can I assist you?"]
@@ -55,8 +55,8 @@ with textcontainer:
             conversation_string = get_conversation_string()
             # st.code(conversation_string)
             refined_query = query#query_refiner(conversation_string, query)
-            st.subheader("Refined Query:")
-            st.write(refined_query)
+            #st.subheader("Refined Query:")
+            #st.write(refined_query)
             context = find_match(refined_query)
             print(context)  
             response = conversation.predict(input=f"Context:\n {context} \n\n Query:\n{query}")
