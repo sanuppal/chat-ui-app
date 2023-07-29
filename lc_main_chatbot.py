@@ -41,17 +41,24 @@ prompt_template = ChatPromptTemplate.from_messages([system_msg_template, Message
 
 conversation = ConversationChain(memory=st.session_state.buffer_memory, prompt=prompt_template, llm=llm, verbose=True)
 
-
 # container for chat history
 response_container = st.container()
 # container for text box
 textcontainer = st.container()
 
-
 with textcontainer:
-    query = st.text_input("Query: ", key="input")
+
+    if 'something' not in st.session_state:
+        st.session_state.something = ''
+
+    def submit():
+        st.session_state.something = st.session_state.input
+        st.session_state.input = ''
+
+    st.text_input("Query: ", key="input", on_change=submit)
+    query = st.session_state.something
     if query:
-        with st.spinner("typing..."):
+        with st.spinner("processing..."):
             conversation_string = get_conversation_string()
             # st.code(conversation_string)
             refined_query = query#query_refiner(conversation_string, query)
