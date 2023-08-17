@@ -13,7 +13,7 @@ from lc_utils import *
 from lc_vector_search import *
 import os
 
-st.subheader("KDP GenAI Bot")
+st.subheader("Niche AI Bot")
 
 if 'responses' not in st.session_state:
     st.session_state['responses'] = ["How can I assist you?"]
