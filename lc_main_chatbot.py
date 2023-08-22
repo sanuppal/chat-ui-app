@@ -59,7 +59,7 @@ with textcontainer:
     query = st.session_state.something
     if query:
         with st.spinner("processing..."):
-            conversation_string = get_conversation_string()
+            #conversation_string = get_conversation_string()
             # st.code(conversation_string)
             refined_query = query#query_refiner(conversation_string, query)
             #st.subheader("Refined Query:")
