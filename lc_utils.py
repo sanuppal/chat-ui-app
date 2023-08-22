@@ -1,7 +1,8 @@
 import openai
 import streamlit as st
 
-openai.api_key = "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"
+##Dinesh's key
+openai.api_key = "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"
 
 ##def find_match(input):
 ##    input_em = model.encode(input).tolist()
@@ -27,10 +28,10 @@ def query_refiner(conversation, query):
     print(response['choices'][0]['text'])
     return response['choices'][0]['text']
 
-def get_conversation_string():
-    conversation_string = ""
-    for i in range(len(st.session_state['responses'])-1):
-        
-        conversation_string += "Human: "+st.session_state['requests'][i] + "\n"
-        conversation_string += "Bot: "+ st.session_state['responses'][i+1] + "\n"
-    return conversation_string
+#def get_conversation_string():
+#    conversation_string = ""
+#    for i in range(len(st.session_state['responses'])-1):
+#        
+#        conversation_string += "Human: "+st.session_state['requests'][i] + "\n"
+#       conversation_string += "Bot: "+ st.session_state['responses'][i+1] + "\n"
+#    return conversation_string
