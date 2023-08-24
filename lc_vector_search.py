@@ -10,7 +10,7 @@ model = SentenceTransformer('all-MiniLM-L6-v2') #384 dimensional
 
 ##******velux index*********##
 pinecone.init(api_key="89c890aa-ead7-4c56-93d4-57968c3698c2", environment="asia-southeast1-gcp-free")
-index = pinecone.Index("velux-index")
+index = pinecone.Index("velux-index-1")
 
 ##
 # def addData(corpusData,url):
